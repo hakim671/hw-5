@@ -86,3 +86,8 @@ data = {'f0':f0,
         'f30':f30,
         'f31':f31,
         'f32':f32}
+input_df = pd.DataFrame(data, index=[0])
+rf = RandomForestClassifier(random_state=42)
+rf.fit(X_row, y_row)
+if st.button:
+    st.write(rf.predict(input_df))
