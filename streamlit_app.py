@@ -12,6 +12,30 @@ df = df.replace({
     '?':None
 })
 
+def preprocess_data(df):
+    # Преобразуем числовые признаки
+    for col in df.select_dtypes(include=['object']).columns:
+        df[col] = pd.to_numeric(df[col], errors='coerce')
+    
+    # Удаляем категориальные признаки
+    df = df.select_dtypes(include=['number'])
+    
+    # Разделяем данные по классам
+    target_col = 39  # Замените на имя целевого столбца
+    pos_class = df[df[target_col] == 1]
+    neg_class = df[df[target_col] == 0]
+    
+    # Заполняем NaN средними значениями внутри классов
+    for col in df.columns:
+        if df[col].isna().sum() > 0:
+            df.loc[df[target_col] == 1, col] = pos_class[col].mean()
+            df.loc[df[target_col] == 0, col] = neg_class[col].mean()
+    
+    return df
+
+df = preprocess_data(df)
+df = df.dropna(axis=1, how='any')
+
 
 with st.expander('data'):
   st.write("X")
