@@ -42,7 +42,7 @@ df = df.dropna(axis=1, how='any')
 
 with st.expander('data'):
   options = [0, 1, 3, 5, 15, 16, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38]
-  col = st.multiselect("Выберите колоки для отображения", col)
+  col = st.multiselect("Выберите колоки для отображения", options)
   st.write("X")
   X_row = df.drop(39, axis=1)
   st.dataframe(X_row[col])
