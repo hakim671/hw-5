@@ -67,3 +67,22 @@ with st.sidebar:
     f30 = st.slider('Feature-30', np.min(df[30]), np.max(df[30]), np.mean(df[30]))
     f31 = st.slider('Feature-31', np.min(df[31]), np.max(df[31]), np.mean(df[31]))
     f32 = st.slider('Feature-32', np.min(df[32]), np.max(df[32]), np.mean(df[32]))
+data = {'f0':f0,
+        'f1':f1,
+        'f3':f3,
+        'f15':f15,
+        'f16':f16,
+        'f19':f19,
+        'f20':f20,
+        'f21':f21,
+        'f22':f22,
+        'f23':f23,
+        'f24':f24,
+        'f25':f25,
+        'f26':f26,
+        'f27':f27,
+        'f28':f28,
+        'f29':f29,
+        'f30':f30,
+        'f31':f31,
+        'f32':f32
