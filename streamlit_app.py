@@ -104,8 +104,6 @@ with st.sidebar:
     input_df = pd.DataFrame(data, index=[0])
     rf = RandomForestClassifier(random_state=42)
     rf.fit(X_row, y_row)
-    if st.button("Predict"):
-        st.write(rf.predict(input_df))
 fig = px.histogram(
     df, 
     x=39, 
@@ -113,3 +111,6 @@ fig = px.histogram(
     title='idk'
 )
 st.plotly_chart(fig)
+
+if st.button("Predict"):
+    st.write(rf.predict(input_df))
