@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import plotly.express as px
 from sklearn.ensemble import RandomForestClassifier
 
 df = pd.read_csv("bands.data", header=None)
@@ -103,3 +104,10 @@ with st.sidebar:
     rf.fit(X_row, y_row)
     if st.button("Predict"):
         st.write(rf.predict(input_df))
+fig = px.histogram(
+    df, 
+    x=39, 
+    nbins=30, 
+    title='idk'
+)
+st.plotly_chart(fig)
