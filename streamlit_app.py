@@ -73,34 +73,33 @@ with st.sidebar:
     f36 = st.slider('Feature-36', float(np.min(df[36])), float(np.max(df[36])), float(np.std(df[36])))
     f37 = st.slider('Feature-37', float(np.min(df[37])), float(np.max(df[37])), float(np.std(df[37])))
     f38 = st.slider('Feature-38', float(np.min(df[38])), float(np.max(df[38])), float(np.std(df[38])))
-
-data = {'f0': f0,
-        'f1': f1,
-        'f3': f3,
-        'f15': f15,
-        'f16': f16,
-        'f19': f19,
-        'f20': f20,
-        'f21': f21,
-        'f22': f22,
-        'f23': f23,
-        'f24': f24,
-        'f25': f25,
-        'f26': f26,
-        'f27': f27,
-        'f28': f28,
-        'f29': f29,
-        'f30': f30,
-        'f31': f31,
-        'f32': f32,
-        'f33': f33,
-        'f34': f34,
-        'f35': f35,
-        'f36': f36,
-        'f37': f37,
-        'f38': f38}
-input_df = pd.DataFrame(data, index=[0])
-rf = RandomForestClassifier(random_state=42)
-rf.fit(X_row, y_row)
-if st.button("Predict"):
-    st.write(rf.predict(input_df))
+    data = {'f0': f0,
+            'f1': f1,
+            'f3': f3,
+            'f15': f15,
+            'f16': f16,
+            'f19': f19,
+            'f20': f20,
+            'f21': f21,
+            'f22': f22,
+            'f23': f23,
+            'f24': f24,
+            'f25': f25,
+            'f26': f26,
+            'f27': f27,
+            'f28': f28,
+            'f29': f29,
+            'f30': f30,
+            'f31': f31,
+            'f32': f32,
+            'f33': f33,
+            'f34': f34,
+            'f35': f35,
+            'f36': f36,
+            'f37': f37,
+            'f38': f38}
+    input_df = pd.DataFrame(data, index=[0])
+    rf = RandomForestClassifier(random_state=42)
+    rf.fit(X_row, y_row)
+    if st.button("Predict"):
+        st.write(rf.predict(input_df))
