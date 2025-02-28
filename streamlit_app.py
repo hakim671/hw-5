@@ -107,7 +107,7 @@ with st.sidebar:
 fig = px.histogram(
     df, 
     x=39, 
-    nbins=30, 
+    nbins=10, 
     title='idk'
 )
 st.plotly_chart(fig)
