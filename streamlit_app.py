@@ -102,5 +102,5 @@ data = {'f0': f0,
 input_df = pd.DataFrame(data, index=[0])
 rf = RandomForestClassifier(random_state=42)
 rf.fit(X_row, y_row)
-if st.button:
+if st.button("Predict"):
     st.write(rf.predict(input_df))
